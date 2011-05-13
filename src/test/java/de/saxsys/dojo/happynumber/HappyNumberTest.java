@@ -3,6 +3,7 @@ package de.saxsys.dojo.happynumber;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class HappyNumberTest {
@@ -34,5 +35,18 @@ public class HappyNumberTest {
 		// 6² + 5² = 36 + 25 = 61
 		// 6² + 1² = 36 + 1 = 37 ..
 		assertThat(new NumberCheck().isHappy(3), is(false));
+	}
+
+	@Test
+	public void ZehnIstEineGluecklicheZahl() throws Exception {
+		// 10² = 1² = 1
+		assertThat(new NumberCheck().isHappy(10), is(true));
+	}
+
+	@Test
+	@Ignore
+	public void HundertIstEineGluecklicheZahl() throws Exception {
+		// 10² = 1² = 1
+		assertThat(new NumberCheck().isHappy(100), is(true));
 	}
 }
