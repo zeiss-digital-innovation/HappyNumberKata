@@ -25,4 +25,14 @@ public class HappyNumberTest {
 		// 2² = 4 ...
 		assertThat(new NumberCheck().isHappy(2), is(false));
 	}
+
+	@Test
+	public void dreiIstKeineGluecklicheZahl() throws Exception {
+		// 3² = 9
+		// 9² = 81
+		// 8² + 1² = 65
+		// 6² + 5² = 36 + 25 = 61
+		// 6² + 1² = 36 + 1 = 37 ..
+		assertThat(new NumberCheck().isHappy(3), is(false));
+	}
 }
