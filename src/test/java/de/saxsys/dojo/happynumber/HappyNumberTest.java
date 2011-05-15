@@ -44,7 +44,7 @@ public class HappyNumberTest {
 
 	@Test
 	public void HundertIstEineGluecklicheZahl() throws Exception {
-		// 10² = 1² = 1
+		// 100² = 1² = 1
 		assertThat(new NumberCheck().isHappy(100), is(true));
 	}
 }

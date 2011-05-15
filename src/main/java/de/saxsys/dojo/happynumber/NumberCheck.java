@@ -10,6 +10,10 @@ public class NumberCheck {
 	 * @return <code>true</code>, falls es sich um eine glueckliche Zahl handelt
 	 */
 	public boolean isHappy(long number) {
-		return 1 == number || 10 == number || 100 == number;
+		return startsWithOneAndFollowedByZeros(number);
+	}
+
+	private boolean startsWithOneAndFollowedByZeros(long number) {
+		return String.valueOf(number).matches("1(0)*");
 	}
 }
