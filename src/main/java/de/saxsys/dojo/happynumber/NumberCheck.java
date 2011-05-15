@@ -15,12 +15,12 @@ public class NumberCheck {
 	public boolean isHappy(long number) {
 
 		Set<Long> unhappyNumbers = new HashSet<Long>();
-		long number2Check = number;
-		while (!startsWithOneAndFollowedByZeros(number2Check)) {
-			if (!unhappyNumbers.add(number2Check)) {
+		long nextNumber = number;
+		while ((1 != nextNumber)) {
+			if (!unhappyNumbers.add(nextNumber)) {
 				return false;
 			}
-			number2Check = getSumOfSquaresOfDigitsOf(number2Check);
+			nextNumber = getSumOfSquaresOfDigitsOf(nextNumber);
 		}
 		return true;
 	}
@@ -28,17 +28,11 @@ public class NumberCheck {
 	private long getSumOfSquaresOfDigitsOf(long number) {
 
 		long newNumber = 0;
-		final String numberString = String.valueOf(number);
-		for (int i = 0; i < numberString.length(); i++) {
-			final long digit = Long.parseLong(String.valueOf( //
-					numberString.charAt(i)));
-			newNumber += digit * digit;
+		final char[] characters = String.valueOf(number).toCharArray();
+		for (char character : characters) {
+			final long digit = Character.digit(character, 10);
+			newNumber += Math.pow(digit, 2);
 		}
 		return newNumber;
-	}
-
-	private boolean startsWithOneAndFollowedByZeros(long number) {
-
-		return String.valueOf(number).matches("10*");
 	}
 }
