@@ -14,17 +14,14 @@ public class NumberCheck {
 	 */
 	public boolean isHappy(long number) {
 
-		long number2Check = number;
 		Set<Long> unhappyNumbers = new HashSet<Long>();
-		int depth = 0;
-		while (!startsWithOneAndFollowedByZeros(number2Check) && depth < 20) {
+		long number2Check = number;
+		while (!startsWithOneAndFollowedByZeros(number2Check)) {
 			if (!unhappyNumbers.add(number2Check)) {
 				return false;
 			}
 			number2Check = getSumOfSquaresOfDigitsOf(number2Check);
-			depth++;
 		}
-
 		return true;
 	}
 
@@ -37,7 +34,6 @@ public class NumberCheck {
 					numberString.charAt(i)));
 			newNumber += digit * digit;
 		}
-
 		return newNumber;
 	}
 

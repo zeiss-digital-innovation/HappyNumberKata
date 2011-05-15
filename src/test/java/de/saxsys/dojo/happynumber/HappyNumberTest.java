@@ -37,32 +37,32 @@ public class HappyNumberTest {
 	}
 
 	@Test
-	public void ZehnIstEineGluecklicheZahl() throws Exception {
+	public void eineGluecklicheZahlIst10() throws Exception {
 		// 10 : 1² = 1
 		assertThat(new NumberCheck().isHappy(10), is(true));
 	}
 
 	@Test
-	public void HundertIstEineGluecklicheZahl() throws Exception {
+	public void eineGluecklicheZahlIst100() throws Exception {
 		// 100 : 1² = 1
 		assertThat(new NumberCheck().isHappy(100), is(true));
 	}
 
 	@Test
-	public void elfIstKeineGluecklicheZahl() throws Exception {
+	public void keineGluecklicheZahlIst11() throws Exception {
 		// 11 : 1² + 1² = 2 ..
 		assertThat(new NumberCheck().isHappy(11), is(false));
 	}
 
 	@Test
-	public void dreizehnIstEineGluecklicheZahl() throws Exception {
+	public void eineGluecklicheZahlIst13() throws Exception {
 		// 13 : 1² + 3² = 1 + 9 = 10
 		// 10 : 1² = 1
 		assertThat(new NumberCheck().isHappy(13), is(true));
 	}
 
 	@Test
-	public void einunddreissigIstEineGluecklicheZahl() throws Exception {
+	public void eineGluecklicheZahlIst31() throws Exception {
 		// 13 : 1² + 3² = 1 + 9 = 10
 		// 10 : 1² = 1
 		assertThat(new NumberCheck().isHappy(31), is(true));
