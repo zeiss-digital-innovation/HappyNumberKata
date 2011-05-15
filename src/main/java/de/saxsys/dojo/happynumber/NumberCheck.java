@@ -1,5 +1,6 @@
 package de.saxsys.dojo.happynumber;
 
+
 public class NumberCheck {
 
 	/**
@@ -15,6 +16,15 @@ public class NumberCheck {
 	}
 
 	private long getSumOfSquaresOfDigitsOf(long number) {
+
+		// long result = 0;
+		// Scanner sc = new Scanner(String.valueOf(number));
+		// while (sc.hasNext("\\d")) {
+		// long digit = Long.parseLong(sc.next("\\d"));
+		// result += digit * digit;
+		// }
+		// return result;
+
 		if (13 == number || 31 == number)
 			return 10;
 		else if (7171 == number)
