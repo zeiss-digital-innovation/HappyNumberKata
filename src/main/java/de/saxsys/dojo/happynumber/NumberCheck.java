@@ -1,5 +1,8 @@
 package de.saxsys.dojo.happynumber;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class NumberCheck {
 
 	/**
@@ -12,13 +15,17 @@ public class NumberCheck {
 	public boolean isHappy(long number) {
 
 		long number2Check = number;
+		Set<Long> unhappyNumbers = new HashSet<Long>();
 		int depth = 0;
-		while (!startsWithOneAndFollowedByZeros(number2Check) && depth < 2) {
+		while (!startsWithOneAndFollowedByZeros(number2Check) && depth < 20) {
+			if (!unhappyNumbers.add(number2Check)) {
+				return false;
+			}
 			number2Check = getSumOfSquaresOfDigitsOf(number2Check);
 			depth++;
 		}
 
-		return startsWithOneAndFollowedByZeros(number2Check);
+		return true;
 	}
 
 	private long getSumOfSquaresOfDigitsOf(long number) {
