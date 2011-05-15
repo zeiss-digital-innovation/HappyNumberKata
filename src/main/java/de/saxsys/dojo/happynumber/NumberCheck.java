@@ -14,6 +14,6 @@ public class NumberCheck {
 	}
 
 	private boolean startsWithOneAndFollowedByZeros(long number) {
-		return String.valueOf(number).matches("1(0)*");
+		return String.valueOf(number).matches("10*");
 	}
 }

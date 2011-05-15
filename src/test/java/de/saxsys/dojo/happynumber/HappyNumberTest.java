@@ -47,4 +47,11 @@ public class HappyNumberTest {
 		// 100² = 1² = 1
 		assertThat(new NumberCheck().isHappy(100), is(true));
 	}
+
+	@Test
+	public void ElfIstKeineGluecklicheZahl() throws Exception {
+		// 11² = 1² + 1² = 2 ..
+		assertThat(new NumberCheck().isHappy(11), is(false));
+	}
+
 }
