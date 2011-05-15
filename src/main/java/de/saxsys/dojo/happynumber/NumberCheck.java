@@ -19,20 +19,20 @@ public class NumberCheck {
 
 	private long getSumOfSquaresOfDigitsOf(long number) {
 
-		// long result = 0;
-		// Scanner sc = new Scanner(String.valueOf(number));
-		// while (sc.hasNext("\\d")) {
-		// long digit = Long.parseLong(sc.next("\\d"));
-		// result += digit * digit;
-		// }
-		// return result;
+		long result = 0;
 
-		if (13 == number || 31 == number)
-			return 10;
-		else if (7171 == number)
-			return 100;
-		else
-			return number;
+		String numberString = String.valueOf(number);
+		for (int i = 0; i < numberString.length(); i++) {
+			long digit = Long.parseLong(String.valueOf(numberString.charAt(i)));
+			result += (digit * digit);
+		}
+
+		// Scanner sc = new Scanner(String.valueOf(number));
+		// while (sc.hasNext("[0-9]{1}")) {
+		// long digit = Long.parseLong(sc.next("[0-9]{1}"));
+		// result += (digit * digit);
+		// }
+		return result;
 	}
 
 	private boolean startsWithOneAndFollowedByZeros(long number) {
