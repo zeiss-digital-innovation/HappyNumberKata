@@ -74,4 +74,12 @@ public class HappyNumberTest {
 		// 100 : 1² = 1
 		assertThat(new NumberCheck().isHappy(7171), is(true));
 	}
+
+	@Test
+	public void eineGluecklicheZahlIst23() throws Exception {
+		// 23 : 2² + 3² = 4 + 9 = 13
+		// 13 : 1² + 3² = 1 + 9 = 10
+		// 10 : 1² = 1
+		assertThat(new NumberCheck().isHappy(23), is(true));
+	}
 }

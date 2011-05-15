@@ -12,8 +12,10 @@ public class NumberCheck {
 	public boolean isHappy(long number) {
 
 		long number2Check = number;
-		if (!startsWithOneAndFollowedByZeros(number2Check)) {
-			number2Check = getSumOfSquaresOfDigitsOf(number);
+		int depth = 0;
+		while (!startsWithOneAndFollowedByZeros(number2Check) && depth < 2) {
+			number2Check = getSumOfSquaresOfDigitsOf(number2Check);
+			depth++;
 		}
 
 		return startsWithOneAndFollowedByZeros(number2Check);
