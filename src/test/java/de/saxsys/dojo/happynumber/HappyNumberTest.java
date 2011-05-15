@@ -38,20 +38,26 @@ public class HappyNumberTest {
 
 	@Test
 	public void ZehnIstEineGluecklicheZahl() throws Exception {
-		// 10² = 1² = 1
+		// 10 : 1² = 1
 		assertThat(new NumberCheck().isHappy(10), is(true));
 	}
 
 	@Test
 	public void HundertIstEineGluecklicheZahl() throws Exception {
-		// 100² = 1² = 1
+		// 100 : 1² = 1
 		assertThat(new NumberCheck().isHappy(100), is(true));
 	}
 
 	@Test
-	public void ElfIstKeineGluecklicheZahl() throws Exception {
-		// 11² = 1² + 1² = 2 ..
+	public void elfIstKeineGluecklicheZahl() throws Exception {
+		// 11 : 1² + 1² = 2 ..
 		assertThat(new NumberCheck().isHappy(11), is(false));
 	}
 
+	@Test
+	public void dreizehnIstEineGluecklicheZahl() throws Exception {
+		// 13 : 1² + 3² = 1 + 9 = 10
+		// 10 : 1² = 1
+		assertThat(new NumberCheck().isHappy(13), is(true));
+	}
 }
