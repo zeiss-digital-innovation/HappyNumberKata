@@ -1,6 +1,5 @@
 package de.saxsys.dojo.happynumber;
 
-
 public class NumberCheck {
 
 	/**
@@ -11,7 +10,10 @@ public class NumberCheck {
 	 * @return <code>true</code>, falls es sich um eine glueckliche Zahl handelt
 	 */
 	public boolean isHappy(long number) {
-		long number2Check = getSumOfSquaresOfDigitsOf(number);
+		long number2Check = number;
+		if (!startsWithOneAndFollowedByZeros(number2Check)) {
+			number2Check = getSumOfSquaresOfDigitsOf(number);
+		}
 		return startsWithOneAndFollowedByZeros(number2Check);
 	}
 
