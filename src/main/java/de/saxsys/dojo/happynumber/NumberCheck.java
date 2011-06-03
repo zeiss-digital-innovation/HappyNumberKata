@@ -10,9 +10,6 @@ public class NumberCheck {
 	 * @return <code>true</code>, falls es sich um eine glueckliche Zahl handelt
 	 */
 	public boolean isHappy(long number) {
-		if (2 == number || 3 == number || 11 == number) {
-			return false;
-		}
-		return true;
+		return 1 == number || 10 == number;
 	}
 }
