@@ -17,6 +17,10 @@ public class HappyNumberTest {
 		assertThat(new NumberCheck().isHappy(2), is(false));
 	}
 
+	@Test
+	public void dreiIstZutiefstBetruebteZahl() throws Exception {
+		assertThat(new NumberCheck().isHappy(3), is(false));
+	}
 	// Test für 3
 	// Test für 10
 
