@@ -8,20 +8,27 @@ import org.junit.Test;
 public class HappyNumberTest {
 
 	@Test
-	public void einsIstEineGluecklicheZahl() throws Exception {
+	public void einsIstEineGluecklicheZahl() {
 		assertThat(new NumberCheck().isHappy(1), is(true));
 	}
 
 	@Test
-	public void zweiIstZutiefstBetruebteZahl() throws Exception {
+	public void zweiIstZutiefstBetruebteZahl() {
 		assertThat(new NumberCheck().isHappy(2), is(false));
 	}
 
 	@Test
-	public void dreiIstZutiefstBetruebteZahl() throws Exception {
+	public void dreiIstZutiefstBetruebteZahl() {
 		assertThat(new NumberCheck().isHappy(3), is(false));
 	}
-	// Test für 3
-	// Test für 10
 
+	@Test
+	public void zehnIstEineGluecklicheZahl() {
+		assertThat(new NumberCheck().isHappy(10), is(true));
+	}
+
+	@Test
+	public void elfIstKeineGluecklicheZahl() {
+		assertThat(new NumberCheck().isHappy(11), is(false));
+	}
 }
