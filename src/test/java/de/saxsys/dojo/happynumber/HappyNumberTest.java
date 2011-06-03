@@ -31,4 +31,9 @@ public class HappyNumberTest {
 	public void elfIstKeineGluecklicheZahl() {
 		assertThat(new NumberCheck().isHappy(11), is(false));
 	}
+
+	@Test
+	public void hundertIstEineGluecklicheZahl() {
+		assertThat(new NumberCheck().isHappy(100), is(true));
+	}
 }
