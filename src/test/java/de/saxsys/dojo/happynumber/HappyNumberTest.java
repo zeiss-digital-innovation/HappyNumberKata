@@ -11,4 +11,13 @@ public class HappyNumberTest {
 	public void einsIstEineGluecklicheZahl() throws Exception {
 		assertThat(new NumberCheck().isHappy(1), is(true));
 	}
+
+	@Test
+	public void zweiIstZutiefstBetruebteZahl() throws Exception {
+		assertThat(new NumberCheck().isHappy(2), is(false));
+	}
+
+	// Test für 3
+	// Test für 10
+
 }
